@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --bg-soft: #eef3f9;
+  --bg-main: #f8fbff;
+  --text-ink: #0f2342;
+  --text-muted: #4f6382;
+  --line: #d7e3f3;
+  --brand-1: #0b5fff;
+  --brand-2: #29b2ff;
+  --accent: #0bc5c8;
+  --panel: #ffffff;
+}
+
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+    color: var(--text-ink);
+    background:
+      radial-gradient(circle at 15% 10%, rgba(41, 178, 255, 0.2), transparent 30%),
+      radial-gradient(circle at 85% 18%, rgba(11, 95, 255, 0.18), transparent 35%),
+      linear-gradient(180deg, var(--bg-main) 0%, var(--bg-soft) 100%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display), sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .site-shell {
+    @apply mx-auto w-full max-w-7xl px-5 md:px-8;
+  }
+
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/85 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-sky-700;
+  }
+
+  .surface-card {
+    @apply rounded-3xl border border-slate-200/70 bg-white/95 shadow-[0_14px_40px_rgba(18,55,105,0.08)];
+  }
+
+  .cta-button {
+    @apply inline-flex items-center justify-center rounded-xl bg-pillio-navy px-5 py-3 text-sm font-semibold text-white transition hover:translate-y-[-1px] hover:shadow-lg;
+  }
+
+  .ghost-button {
+    @apply inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 280s linear infinite;
+  will-change: transform;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 3.6s ease-in-out infinite;
+}
