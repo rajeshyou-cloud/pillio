@@ -488,7 +488,7 @@ export default function PortalHome() {
       <footer className="border-t border-slate-200/80 bg-white/80 py-8">
         <div className="site-shell flex flex-col gap-4 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col gap-1">
-            <PillioLogo href="/" size="sm" />
+            <PillioLogo href="/" size="sm" fullName />
             <p className="pl-0.5 text-xs font-medium tracking-wide text-pillio-navy/60">
               Engineer What&apos;s Next.
             </p>
